@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SchoolHub - Student & Teacher Management</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/themes.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Login Screen -->
+    <div id="loginScreen" class="login-container">
+        <div class="login-card">
+            <div class="login-header">
+                <h1><i class="fas fa-graduation-cap"></i> SchoolHub</h1>
+                <p>Your gateway to academic excellence</p>
+            </div>
+            <form id="loginForm" class="login-form">
+                <div class="form-group">
+                    <label for="loginId">Student ID / Teacher Email</label>
+                    <input type="text" id="loginId" placeholder="Enter your ID or email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter your password" required>
+                </div>
+                <div class="form-group">
+                    <label for="userType">I am a:</label>
+                    <select id="userType" required>
+                        <option value="">Select user type</option>
+                        <option value="student">Student</option>
+                        <option value="teacher">Teacher</option>
+                    </select>
+                </div>
+                <button type="submit" class="login-btn">
+                    <i class="fas fa-sign-in-alt"></i> Sign In
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Main App -->
+    <div id="mainApp" class="app-container" style="display: none;">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-left">
+                <h1><i class="fas fa-graduation-cap"></i> SchoolHub</h1>
+            </div>
+            <div class="header-right">
+                <button id="themeToggle" class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="user-profile">
+                    <span id="userName">Welcome, User</span>
+                    <button id="logoutBtn" class="logout-btn">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <div class="app-body">
+            <!-- Sidebar Navigation -->
+            <nav class="sidebar">
+                <div class="nav-section student-nav">
+                    <h3>Student</h3>
+                    <ul class="nav-list">
+                        <li><a href="#dashboard" class="nav-link active" data-section="dashboard">
+                            <i class="fas fa-home"></i> Dashboard</a></li>
+                        <li><a href="#timetable" class="nav-link" data-section="timetable">
+                            <i class="fas fa-calendar-alt"></i> Timetable</a></li>
+                        <li><a href="#assignments" class="nav-link" data-section="assignments">
+                            <i class="fas fa-tasks"></i> Assignments</a></li>
+                        <li><a href="#grades" class="nav-link" data-section="grades">
+                            <i class="fas fa-chart-line"></i> Grades</a></li>
+                        <li><a href="#attendance" class="nav-link" data-section="attendance">
+                            <i class="fas fa-calendar-check"></i> Attendance</a></li>
+                        <li><a href="#announcements" class="nav-link" data-section="announcements">
+                            <i class="fas fa-bullhorn"></i> Announcements</a></li>
+                        <li><a href="#chat" class="nav-link" data-section="chat">
+                            <i class="fas fa-comments"></i> Chat</a></li>
+                        <li><a href="#profile" class="nav-link" data-section="profile">
+                            <i class="fas fa-user"></i> Profile</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section teacher-nav" style="display: none;">
+                    <h3>Teacher</h3>
+                    <ul class="nav-list">
+                        <li><a href="#teacher-dashboard" class="nav-link active" data-section="teacher-dashboard">
+                            <i class="fas fa-home"></i> Dashboard</a></li>
+                        <li><a href="#manage-assignments" class="nav-link" data-section="manage-assignments">
+                            <i class="fas fa-file-upload"></i> Manage Assignments</a></li>
+                        <li><a href="#attendance-management" class="nav-link" data-section="attendance-management">
+                            <i class="fas fa-user-check"></i> Attendance</a></li>
+                        <li><a href="#grading" class="nav-link" data-section="grading">
+                            <i class="fas fa-star"></i> Grading</a></li>
+                        <li><a href="#student-info" class="nav-link" data-section="student-info">
+                            <i class="fas fa-users"></i> Student Info</a></li>
+                        <li><a href="#manage-timetable" class="nav-link" data-section="manage-timetable">
+                            <i class="fas fa-calendar-edit"></i> Manage Timetable</a></li>
+                        <li><a href="#teacher-announcements" class="nav-link" data-section="teacher-announcements">
+                            <i class="fas fa-megaphone"></i> Announcements</a></li>
+                        <li><a href="#teacher-chat" class="nav-link" data-section="teacher-chat">
+                            <i class="fas fa-comments"></i> Chat</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Main Content -->
+            <main class="main-content">
+                <!-- Dashboard Section -->
+                <div id="dashboard" class="content-section active">
+                    <h2>Student Dashboard</h2>
+                    <div class="dashboard-grid">
+                        <div class="dashboard-card">
+                            <div class="card-icon">
+                                <i class="fas fa-tasks"></i>
+                            </div>
+                            <div class="card-content">
+                                <h3>Pending Assignments</h3>
+                                <p class="card-number">3</p>
+                                <p class="card-subtitle">Due this week</p>
+                            </div>
+                        </div>
+                        <div class="dashboard-card">
+                            <div class="card-icon">
+                                <i class="fas fa-percentage"></i>
+                            </div>
+                            <div class="card-content">
+                                <h3>Attendance Rate</h3>
+                                <p class="card-number">92%</p>
+                                <p class="card-subtitle">This semester</p>
+                            </div>
+                        </div>
+                        <div class="dashboard-card">
+                            <div class="card-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="card-content">
+                                <h3>Average Grade</h3>
+                                <p class="card-number">B+</p>
+                                <p class="card-subtitle">Current term</p>
+                            </div>
+                        </div>
+                        <div class="dashboard-card">
+                            <div class="card-icon">
+                                <i class="fas fa-bell"></i>
+                            </div>
+                            <div class="card-content">
+                                <h3>New Notifications</h3>
+                                <p class="card-number">5</p>
+                                <p class="card-subtitle">Unread messages</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="recent-activity">
+                        <h3>Recent Activity</h3>
+                        <div class="activity-list">
+                            <div class="activity-item">
+                                <i class="fas fa-file-upload activity-icon"></i>
+                                <div class="activity-content">
+                                    <p><strong>New Assignment:</strong> Mathematics - Calculus Problems</p>
+                                    <span class="activity-time">2 hours ago</span>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <i class="fas fa-star activity-icon"></i>
+                                <div class="activity-content">
+                                    <p><strong>Grade Updated:</strong> Physics Lab Report - A-</p>
+                                    <span class="activity-time">1 day ago</span>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <i class="fas fa-bullhorn activity-icon"></i>
+                                <div class="activity-content">
+                                    <p><strong>Announcement:</strong> Parent-Teacher Meeting Schedule</p>
+                                    <span class="activity-time">2 days ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Teacher Dashboard -->
+                <div id="teacher-dashboard" class="content-section">
+                    <h2>Teacher Dashboard</h2>
+                    <div class="dashboard-grid">
+                        <div class="dashboard-card">
+                            <div class="card-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="card-content">
+                                <h3>Total Students</h3>
+                                <p class="card-number">156</p>
+                                <p class="card-subtitle">Across all classes</p>
+                            </div>
+                        </div>
+                        <div class="dashboard-card">
+                            <div class="card-icon">
+                                <i class="fas fa-clipboard-check"></i>
+                            </div>
+                            <div class="card-content">
+                                <h3>Assignments to Grade</h3>
+                                <p class="card-number">23</p>
+                                <p class="card-subtitle">Pending review</p>
+                            </div>
+                        </div>
+                        <div class="dashboard-card">
+                            <div class="card-icon">
+                                <i class="fas fa-calendar-day"></i>
+                            </div>
+                            <div class="card-content">
+                                <h3>Today's Classes</h3>
+                                <p class="card-number">4</p>
+                                <p class="card-subtitle">Scheduled sessions</p>
+                            </div>
+                        </div>
+                        <div class="dashboard-card">
+                            <div class="card-icon">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div class="card-content">
+                                <h3>Low Attendance</h3>
+                                <p class="card-number">8</p>
+                                <p class="card-subtitle">Students below 80%</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Other sections will be populated by JavaScript -->
+                <div id="timetable" class="content-section">
+                    <h2>My Timetable</h2>
+                    <div id="timetableContainer">
+                        <!-- Timetable content will be loaded here -->
+                    </div>
+                </div>
+
+                <div id="assignments" class="content-section">
+                    <h2>Assignments</h2>
+                    <div id="assignmentsContainer">
+                        <!-- Assignments content will be loaded here -->
+                    </div>
+                </div>
+
+                <div id="grades" class="content-section">
+                    <h2>My Grades</h2>
+                    <div id="gradesContainer">
+                        <!-- Grades content will be loaded here -->
+                    </div>
+                </div>
+
+                <div id="attendance" class="content-section">
+                    <h2>My Attendance</h2>
+                    <div id="attendanceContainer">
+                        <!-- Attendance content will be loaded here -->
+                    </div>
+                </div>
+
+                <div id="announcements" class="content-section">
+                    <h2>School Announcements</h2>
+                    <div id="announcementsContainer">
+                        <!-- Announcements content will be loaded here -->
+                    </div>
+                </div>
+
+                <div id="chat" class="content-section">
+                    <h2>Chat with Teachers</h2>
+                    <div id="chatContainer">
+                        <!-- Chat content will be loaded here -->
+                    </div>
+                </div>
+
+                <div id="profile" class="content-section">
+                    <h2>My Profile</h2>
+                    <div id="profileContainer">
+                        <!-- Profile content will be loaded here -->
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="notificationToast" class="notification-toast">
+        <div class="toast-content">
+            <i class="toast-icon"></i>
+            <span class="toast-message"></span>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/notifications.js"></script>
+</body>
+</html>
