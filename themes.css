@@ -1,0 +1,228 @@
+/* ================================
+   Dark Theme Variables
+   ================================ */
+[data-theme="dark"] {
+    /* Dark Theme Colors */
+    --primary-blue: #4FADF7;
+    --accent-mint: #A0F0BA;
+    --background-light: #1a1d29;
+    --text-charcoal: #E8E8E8;
+    --secondary-lavender: #2D3748;
+    
+    /* Status Colors (adjusted for dark theme) */
+    --success-green: #48BB78;
+    --error-red: #F56565;
+    --warning-orange: #ED8936;
+    --info-blue: #4299E1;
+    
+    /* Neutral Colors for Dark Theme */
+    --white: #2D3748;
+    --light-gray: #4A5568;
+    --medium-gray: #A0AEC0;
+    --dark-gray: #E2E8F0;
+    
+    /* Card and Surface Colors */
+    --card-background: #2D3748;
+    --sidebar-background: #1A202C;
+    --header-background: #2D3748;
+}
+
+/* ================================
+   Dark Theme Specific Overrides
+   ================================ */
+[data-theme="dark"] body {
+    background-color: var(--background-light);
+    color: var(--text-charcoal);
+}
+
+[data-theme="dark"] .login-container {
+    background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+}
+
+[data-theme="dark"] .login-card {
+    background: var(--card-background);
+    border: 1px solid var(--light-gray);
+}
+
+[data-theme="dark"] .login-form input,
+[data-theme="dark"] .login-form select {
+    background: var(--background-light);
+    border-color: var(--light-gray);
+    color: var(--text-charcoal);
+}
+
+[data-theme="dark"] .login-form input:focus,
+[data-theme="dark"] .login-form select:focus {
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(79, 173, 247, 0.2);
+}
+
+[data-theme="dark"] .app-header {
+    background: var(--header-background);
+    border-bottom-color: var(--light-gray);
+}
+
+[data-theme="dark"] .sidebar {
+    background: var(--sidebar-background);
+    border-right-color: var(--light-gray);
+}
+
+[data-theme="dark"] .nav-link {
+    color: var(--text-charcoal);
+}
+
+[data-theme="dark"] .nav-link:hover {
+    background: var(--light-gray);
+    color: var(--primary-blue);
+}
+
+[data-theme="dark"] .nav-link.active {
+    background: linear-gradient(90deg, var(--primary-blue), var(--accent-mint));
+    color: #1a202c;
+}
+
+[data-theme="dark"] .dashboard-card {
+    background: var(--card-background);
+    border-color: var(--light-gray);
+}
+
+[data-theme="dark"] .recent-activity {
+    background: var(--card-background);
+    border-color: var(--light-gray);
+}
+
+[data-theme="dark"] .activity-item {
+    background: var(--background-light);
+}
+
+[data-theme="dark"] .activity-item:hover {
+    background: var(--light-gray);
+}
+
+[data-theme="dark"] .notification-toast {
+    background: var(--card-background);
+    border-left-color: var(--success-green);
+}
+
+[data-theme="dark"] .theme-toggle:hover {
+    background: var(--light-gray);
+    color: var(--primary-blue);
+}
+
+[data-theme="dark"] .logout-btn:hover {
+    background: var(--error-red);
+    color: var(--white);
+}
+
+/* ================================
+   Theme Toggle Icon Changes
+   ================================ */
+[data-theme="dark"] .theme-toggle .fa-moon {
+    display: none;
+}
+
+[data-theme="dark"] .theme-toggle .fa-sun {
+    display: inline-block;
+}
+
+.theme-toggle .fa-sun {
+    display: none;
+}
+
+/* ================================
+   Dark Theme Form Elements
+   ================================ */
+[data-theme="dark"] input,
+[data-theme="dark"] select,
+[data-theme="dark"] textarea {
+    background: var(--background-light);
+    border-color: var(--light-gray);
+    color: var(--text-charcoal);
+}
+
+[data-theme="dark"] input:focus,
+[data-theme="dark"] select:focus,
+[data-theme="dark"] textarea:focus {
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(79, 173, 247, 0.2);
+}
+
+[data-theme="dark"] button:not(.login-btn):not(.nav-link) {
+    background: var(--light-gray);
+    color: var(--text-charcoal);
+    border: 1px solid var(--medium-gray);
+}
+
+[data-theme="dark"] button:not(.login-btn):not(.nav-link):hover {
+    background: var(--medium-gray);
+}
+
+/* ================================
+   Dark Theme Scrollbar
+   ================================ */
+[data-theme="dark"] ::-webkit-scrollbar-track {
+    background: var(--background-light);
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+    background: var(--light-gray);
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+    background: var(--medium-gray);
+}
+
+/* ================================
+   Smooth Theme Transition
+   ================================ */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* ================================
+   Additional Dark Theme Components
+   ================================ */
+[data-theme="dark"] .content-section {
+    color: var(--text-charcoal);
+}
+
+[data-theme="dark"] .table,
+[data-theme="dark"] .card,
+[data-theme="dark"] .modal {
+    background: var(--card-background);
+    border-color: var(--light-gray);
+}
+
+[data-theme="dark"] .table th,
+[data-theme="dark"] .table td {
+    border-color: var(--light-gray);
+}
+
+[data-theme="dark"] .table th {
+    background: var(--background-light);
+}
+
+[data-theme="dark"] .badge {
+    background: var(--light-gray);
+    color: var(--text-charcoal);
+}
+
+[data-theme="dark"] .badge.primary {
+    background: var(--primary-blue);
+    color: #1a202c;
+}
+
+[data-theme="dark"] .badge.success {
+    background: var(--success-green);
+    color: #1a202c;
+}
+
+[data-theme="dark"] .badge.error {
+    background: var(--error-red);
+    color: var(--white);
+}
+
+[data-theme="dark"] .badge.warning {
+    background: var(--warning-orange);
+    color: #1a202c;
+}
